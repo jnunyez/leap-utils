@@ -1,13 +1,13 @@
-# generated on 2024-01-08 13:42:47.803712
+# generated on 2024-01-08 14:24:29.489289
 # this program/generator available from:
 # https://github.com/jnunyez/leap-utils
-# 
+#
 # updated 2016-07-08 00:00:00+00:00
 #$	3676924800
-# 
+#
 # expires 2024-06-28 00:00:00+00:00
 #@	3928521600
-# 
+#
 # Leap seconds
 2272060800	10	# 1972-01-01
 2287785600	11	# 1972-07-01
@@ -37,7 +37,7 @@
 3550089600	35	# 2012-07-01
 3644697600	36	# 2015-07-01
 3692217600	37	# 2017-01-01
-# 
-# SHA1 hash for this file: 
+#
+# SHA1 hash for this file:
 #h	16edd0f0 3666784f 37db6bdd e74ced87 59af48f1
 # end of file.
