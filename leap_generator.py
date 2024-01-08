@@ -74,7 +74,7 @@ TEMPLATE = """# generated on {now}
 """
 
 
-def write_leep_seconds_file(fname, leap_seconds, update, expires, ls_offset):
+def write_leap_seconds_file(fname, leap_seconds, update, expires, ls_offset):
     s = sha.new("sha1")
     s.update(str(ntp_timestamp(update)).encode("utf-8"))
     s.update(str(ntp_timestamp(expires)).encode("utf-8"))
@@ -117,4 +117,4 @@ def write_leep_seconds_file(fname, leap_seconds, update, expires, ls_offset):
 
 
 if __name__ == "__main__":
-    write_leep_seconds_file("my-leap-seconds.list", leap_seconds, update, expires, 10)
+    write_leap_seconds_file("my-leap-seconds.list", leap_seconds, update, expires, 10)
