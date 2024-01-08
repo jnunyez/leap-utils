@@ -8,8 +8,6 @@ NTP_EPOCH = dt.datetime(1900, 1, 1, 0, 0, 0, tzinfo=pytz.utc)
 
 
 def ntp_timestamp(date):
-    # t = datetime.datetime(date.year,date.month,date.day,
-    #                    date.hour,date.minute,date.second,tzinfo=pytz.utc)
     # NTP leap-seconds.list wants seconds since 1900
     return int((date - NTP_EPOCH).total_seconds())
 
@@ -81,6 +79,8 @@ def write_leap_seconds_file(fname, leap_seconds, update, expires, ls_offset):
 
     formatted_leap_seconds = []
     for ls, d in enumerate(leap_seconds, ls_offset):
+        #print(ls)
+        #print(d)
         ntp_t = ntp_timestamp(d)
         formatted_leap_seconds.append(f"{ntp_t}\t{ls}\t# {d.strftime('%Y-%m-%d')}")
         s.update(str(ntp_t).encode("utf-8"))
@@ -107,14 +107,6 @@ def write_leap_seconds_file(fname, leap_seconds, update, expires, ls_offset):
                 hash=" ".join(shaSplit),
             )
         )
-
-
-
-
-
-
-
-
 
 if __name__ == "__main__":
     write_leap_seconds_file("my-leap-seconds.list", leap_seconds, update, expires, 10)
